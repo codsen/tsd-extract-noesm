@@ -5,8 +5,7 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:prettier/recommended",
-    "@logux/eslint-config/ts",
+    "plugin:prettier/recommended"
   ],
   parserOptions: {
     ecmaVersion: "latest",
