@@ -12,4 +12,6 @@ test
 .prettierignore
 rollup.config.js
 tsconfig.json
+tsconfig.build.json
 esbuild.js
+.eslintrc.cjs
