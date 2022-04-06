@@ -3,14 +3,16 @@ module.exports = {
     es6: true,
     node: true,
   },
+  parser: "@typescript-eslint/parser",
   extends: [
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   parserOptions: {
     ecmaVersion: "latest",
   },
-  plugins: ["row-num", "test-num"],
+  plugins: ["@typescript-eslint", "row-num", "test-num"],
   ignorePatterns: [
     "**/eslint-plugin-row-num/rules/utils/**",
     "**/dist/**",
@@ -32,14 +34,4 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-condition": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
   },
-  overrides: [
-    {
-      files: ["*.ts"],
-      parserOptions: {
-        tsconfigRootDir: __dirname,
-        project: ["./tsconfig.json"],
-      },
-      extends: ["prettier"],
-    },
-  ],
 };

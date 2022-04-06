@@ -74,10 +74,10 @@ function extract(str: string, def: string, opts?: Partial<Opts>): ReturnType {
     );
   }
 
-  let resolvedOpts: Opts = Object.assign(defaults, opts);
+  const resolvedOpts: Opts = Object.assign(defaults, opts);
   DEV && console.log(`resolvedOpts: ${JSON.stringify(resolvedOpts, null, 4)}`);
 
-  let statementDefault = {
+  const statementDefault = {
     identifiers: [],
     identifiersStartAt: null,
     identifiersEndAt: null,
@@ -109,10 +109,10 @@ function extract(str: string, def: string, opts?: Partial<Opts>): ReturnType {
   // we stumble upon opening bracket, push its closing counterpart to this array
   // then walk further ignoring everything until this counterpart is met.
   // but also, we catch all other types of brackets.
-  let ignoreUntil: string[] = [];
+  const ignoreUntil: string[] = [];
 
   let ret: ReturnType | null = null; // final return value (used in case opts.extractAll is on)
-  let all = new Set<string>();
+  const all = new Set<string>();
 
   // Chunks:
   // -------------------------------------------------------------------------
@@ -129,7 +129,7 @@ function extract(str: string, def: string, opts?: Partial<Opts>): ReturnType {
   // ^^^^^^^^^^^^^^^^^^^^^^^^^^
   //       chunk
   //
-  let defaultChunk: Chunk = {
+  const defaultChunk: Chunk = {
     startsAt: null,
     endsAt: null,
     identifiers: [],
@@ -390,7 +390,7 @@ function extract(str: string, def: string, opts?: Partial<Opts>): ReturnType {
       chunk.endsAt = i;
 
       // 2. On tactical level, extract the identifier
-      let identifier = str.slice(identifierStartsAt, i);
+      const identifier = str.slice(identifierStartsAt, i);
       DEV &&
         console.log(
           `396 ${`\u001b[${35}m${`██ EXTRACTED`}\u001b[${39}m`} ${`\u001b[${33}m${`identifier`}\u001b[${39}m`} = ${JSON.stringify(

@@ -44,7 +44,7 @@
     "examples": "echo 'skip examples'",
     "lect": "echo 'skip lect'",
     "letspublish": "yarn publish || :",
-    "lint": "eslint . --fix",
+    "lint": "eslint 'src/' --fix",
     "perf": "echo 'skip perf'",
     "prepare": "echo 'ready'",
     "prettier": "prettier",
