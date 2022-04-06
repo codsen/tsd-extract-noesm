@@ -1,0 +1,89 @@
+{
+  "name": "tsd-extract-noesm",
+  "version": "0.0.1",
+  "description": "Extract any definition from TS definitions file",
+  "keywords": [
+    "ts",
+    "typescript",
+    "dts",
+    "type",
+    "definitions",
+    "extract",
+    "get",
+    "interface",
+    "name",
+    "value",
+    "function",
+    "tsx",
+    "tsd",
+    "declare",
+    "export"
+  ],
+  "homepage": "https://codsen.com/os/tsd-extract-noesm/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codsen/tsd-extract-noesm.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Roy Revelt",
+    "email": "roy@codsen.com",
+    "url": "https://codsen.com"
+  },
+  "main": "./dist/tsd-extract-noesm.cjs.js",
+  "module": "./dist/tsd-extract-noesm.esm.js",
+  "types": "types/index.d.ts",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "build": "node esbuild.js && yarn run dts",
+    "dev": "DEV=true node esbuild.js && yarn run dts",
+    "devtest": "c8 yarn run unit && yarn run examples && yarn run lint",
+    "dts": "rollup -c && yarn run prettier 'types/index.d.ts' --write",
+    "examples": "echo 'skip examples'",
+    "lect": "echo 'skip lect'",
+    "letspublish": "yarn publish || :",
+    "lint": "eslint . --fix",
+    "perf": "echo 'skip perf'",
+    "prepare": "echo 'ready'",
+    "prettier": "prettier",
+    "prettier:format": "prettier --write '**/*.{ts,tsx,md}' --no-error-on-unmatched-pattern",
+    "pretest": "yarn run lect && yarn run build",
+    "test": "yarn run devtest",
+    "unit": "uvu test"
+  },
+  "c8": {
+    "check-coverage": true,
+    "exclude": [
+      "**/test/**/*.*"
+    ],
+    "lines": 100
+  },
+  "devDependencies": {
+    "@logux/eslint-config": "^46.1.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "@types/node": "^17.0.23",
+    "c8": "^7.11.0",
+    "esbuild": "^0.14.32",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-let": "^3.0.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-row-num": "^2.0.1",
+    "eslint-plugin-test-num": "^2.0.1",
+    "perf-ref": "^1.0.3",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.70.1",
+    "rollup-plugin-dts": "^4.2.0",
+    "typescript": "^4.6.3",
+    "uvu": "^0.5.3"
+  }
+}
