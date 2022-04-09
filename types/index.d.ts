@@ -1,6 +1,7 @@
 declare const version: string;
 interface Opts {
   extractAll: boolean;
+  mustInclude: string | undefined;
 }
 interface Statement {
   identifiers: string[];
