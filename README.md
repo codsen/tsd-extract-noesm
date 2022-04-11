@@ -26,7 +26,7 @@
 
 ## Install
 
-The latest version is **non-ESM** — you can `require()` it. There is an ESM version, [`tsd-extract`](https://www.npmjs.com/package/tsd-extract)
+This program is not pure-ESM. For pure-ESM, use [`tsd-extract`](https://www.npmjs.com/package/tsd-extract) instead. Both have the same API and the same features.
 
 ```bash
 npm i tsd-extract-noesm
@@ -51,7 +51,7 @@ assert.equal(value, "interface Opts2 { bar: boolean };");
 
 This is a clone of [`tsd-extract`](https://www.npmjs.com/package/tsd-extract) but in non-ESM configuration.
 
-We needed it because [`mdx-bundler`](https://www.npmjs.com/package/mdx-bundler) (as of v9) uses [`@esbuild-plugins/node-resolve`](https://www.npmjs.com/package/@esbuild-plugins/node-resolve) which in turn, uses de-facto unmaintained [`resolve`](https://www.npmjs.com/package/resolve) which does not support ESM packages which have `exports` pointing to anything else than `index.js`.
+We needed it because [`mdx-bundler`](https://www.npmjs.com/package/mdx-bundler) (as of v9) uses [`@esbuild-plugins/node-resolve`](https://www.npmjs.com/package/@esbuild-plugins/node-resolve) which in turn, uses [`resolve`](https://www.npmjs.com/package/resolve) which does not support ESM packages which have `exports` pointing to anything else than `index.js`.
 
 Please [visit codsen.com](https://codsen.com/os/tsd-extract-noesm/) for a full description of the API.
 
