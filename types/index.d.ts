@@ -3,6 +3,7 @@ interface Opts {
   extractAll: boolean;
   semi: boolean;
   mustInclude: string | undefined;
+  stripAs: boolean;
 }
 interface Statement {
   identifiers: string[];
@@ -15,6 +16,7 @@ interface Statement {
   valueStartsAt: number | null;
   valueEndsAt: number | null;
 }
+declare const defaults: Opts;
 /**
  *
  * @param str type definitions file, as a string
@@ -31,4 +33,4 @@ declare function extract(
   opts?: Partial<Opts>
 ): ReturnType;
 
-export { extract, version };
+export { defaults, extract, version };
